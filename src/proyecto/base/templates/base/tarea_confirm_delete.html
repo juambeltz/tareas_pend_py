@@ -1,0 +1,19 @@
+{% extends 'base/principal.html' %}
+{% block content%}
+
+    <div class="barra_superior">
+        <h1>Confirmar eliminación</h1>
+        <a href="{% url 'pendientes'  %}">&#x21B6;  Volver</a>
+    </div>
+
+    <div class="cuerpo-tarjeta">
+        <form method="POST">
+            {% csrf_token %}
+            <p>Vas a eleiminar esta tarea:<b>"{{ ttt }}"</b> </p>
+        <!--    el ttt se define con el context_object_name = 'ttt' en views-->
+            <input type="submit" value="Eliminar">
+        </form>
+    </div>
+
+
+{% endblock content%}

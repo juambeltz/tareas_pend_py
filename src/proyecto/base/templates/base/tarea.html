@@ -1,0 +1,23 @@
+{% extends 'base/principal.html' %}
+{% block content%}
+
+    <!--<a href="{% url 'pendientes' %}">Volver</a>-->
+    <!--<h1>Tarea: {{tarea}} </h1>-->
+    <!--<h3>{{tarea.descripcion}}</h3>-->
+
+    {% if request.user == tarea.usuario %}
+        <p>{{request.user}}</p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Salir">
+        </form>
+        <h1>Tarea: {{tarea.titulo}}</h1>
+        <h3>{{tarea.descripcion}}</h3>
+        <a href="{% url 'pendientes' %}">Volver</a>
+    {% else %}
+        <h1>La tarea no existe o no correspode al usuario "{{request.user}}"</h1>
+        <a href="{% url 'pendientes' %}">Volver</a>
+    {% endif %}
+
+{% endblock content%}
+

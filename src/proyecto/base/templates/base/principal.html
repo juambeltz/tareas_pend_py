@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pendientes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Staatliches&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color : #e5bcb4;
+        }
+        .abel-regular {
+          font-family: "Abel", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+        }
+        .container {
+            max-width : 550px;
+            margin : 15px auto;
+            background-color: #ededed;
+        }
+        a, a:link, a:visited {
+            color: green
+        }
+        a:hover {
+            color:darkred;
+        }
+        .destacado {
+            font-wight: bold;
+        }
+        .barra_superior{
+            display : flex;
+            justify-content : space-between;
+            color: #fefefe;
+            padding : 15px
+            background: rgb(47,47,215);
+            background: linear-gradient(90deg, rgba(47,47,215,1) 1%, rgba(50,187,173,1) 100%);
+            padding:15px
+        }
+        .barra_superior h1, .barra_superior h3  {
+            margin : 0;
+            padding: 5px 0
+        }
+        .barra_superior a {
+            color:white
+        }
+        .main_content {
+            padding:15px
+        }
+        .envoltorio-items-tarea h2{
+            padding: 0 20px
+        }
+        .envoltorio-tareas {
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            padding:10px;
+            border-top: 1px solid #bbbbbb
+        }
+        .envoltorio-tareas:first-child {
+            border-top: none
+        }
+        .titulo-tarea {
+            display:flex;
+            align-items:center;
+            gap: 15px
+
+        }
+        .icono-tarea-completa, .icono-tarea-incompleta {
+            display:inline;
+            width: 15px;
+            height : 15px;
+            border-radius: 50%;
+        }
+        .icono-tarea-completa{
+            background-color: green;
+        }
+        .icono-tarea-incompleta{
+            background-color: grey;
+        }
+        .cruz-eliminar{
+            background-color:red;
+            width : 20px;
+            height: 20px;
+            border-radius: 50%;
+
+            display:flex;
+            align-items:center;
+            justify-content: center
+        }
+        .cruz-eliminar a, .cruz-eliminar a:link, .cruz-eliminar a:visited {
+            color:white;
+            text-decoration: none;
+        }
+        .envoltorio-agregar-buscar{
+            display:flex;
+            padding:0 20px;
+            justify-content: space-between;
+            align-items: center
+        }
+        .envoltorio-agregar-buscar p {
+            display: flex;
+            padding: 5px 10px;
+            background-color: blue;
+            border-radius: 6px;
+            align-items:center;
+            justify-items:center;
+            color:white;
+        }
+        .envoltorio-agregar-buscar p a {
+            color:white;
+            text-decoration:none
+        }
+        .cuerpo-tarjeta{
+            padding:20px
+        }
+    </style>
+
+</head>
+<body class="abel-regular ">
+    <div class="container">
+        {% block content %}
+        {% endblock content%}
+    </div>
+</body>
+</html>
